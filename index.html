@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kai-Chieh Lin — Digital IC & Embedded Systems</title>
+  <meta name="description" content="Kai-Chieh Lin, M.Sc. Electrical Engineering at NUS, focusing on digital IC design and embedded systems: FPGA/HLS accelerators, SoC firmware, RFSoC and edge devices.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Kai-Chieh Lin</a>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#publication">Publication</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero wrap">
+      <div class="hero-text reveal">
+        <p class="eyebrow">M.Sc. Electrical Engineering · National University of Singapore</p>
+        <h1>Kai-Chieh Lin</h1>
+        <p class="lead">Graduate student at NUS, <strong>seeking digital IC design roles</strong>.
+          My background is in communication systems and signal processing, and I like turning those algorithms
+          into hardware — HLS/RTL accelerators integrated on FPGA SoCs and verified on real boards.</p>
+        <div class="domain">
+          <span class="domain-label">Domain knowledge</span>
+          <div class="tags"><span>Communication systems</span><span>Signal processing</span><span>Channel coding · LDPC</span><span>Information theory</span></div>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="#projects" data-open="ic">Digital IC projects</a>
+          <a class="btn" href="#projects" data-open="emb">Embedded systems projects</a>
+        </div>
+        <div class="actions quiet">
+          <a href="https://github.com/jay97186" target="_blank" rel="noopener">GitHub</a>
+          <span>·</span>
+          <a href="mailto:jay97186@gmail.com">jay97186@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="focus reveal">
+        <a class="focus-card" href="#projects" data-open="ic">
+          <div class="focus-head">
+            <svg viewBox="0 0 40 40" aria-hidden="true" class="icon"><rect x="10" y="10" width="20" height="20" rx="3"/><path d="M15 4v6M20 4v6M25 4v6M15 30v6M20 30v6M25 30v6M4 15h6M4 20h6M4 25h6M30 15h6M30 20h6M30 25h6"/><rect x="16" y="16" width="8" height="8" rx="1" class="core"/></svg>
+            <div><h2>Digital IC</h2><p>RTL, HLS and hardware acceleration</p></div>
+          </div>
+          <h4>Coursework</h4>
+          <ul class="courses">
+            <li>VLSI Digital Circuit Design <span>NUS</span></li>
+            <li>Hardware Acceleration &amp; Reconfigurable Computing <span>NUS</span></li>
+            <li>Digital Integrated Circuit <span>NYCU</span></li>
+            <li>DSP-VLSI <span>NYCU</span></li>
+            <li>Computer Architecture <span>NYCU</span></li>
+          </ul>
+          <div class="chips"><span>Verilog</span><span>Vitis HLS</span><span>Vivado</span><span>AXI-Stream</span><span>Cadence Virtuoso</span></div>
+          <span class="go">See projects →</span>
+        </a>
+        <a class="focus-card" href="#projects" data-open="emb">
+          <div class="focus-head">
+            <svg viewBox="0 0 40 40" aria-hidden="true" class="icon"><rect x="5" y="9" width="30" height="22" rx="3"/><path d="M11 31v4M29 31v4M5 16h-2M5 24h-2M35 16h2M35 24h2"/><circle cx="13" cy="20" r="3" class="core"/><path d="M20 16h9M20 20h9M20 24h6"/></svg>
+            <div><h2>Embedded Systems</h2><p>SoC firmware, devices and real-time control</p></div>
+          </div>
+          <h4>Coursework</h4>
+          <ul class="courses">
+            <li>Hardware Acceleration &amp; Reconfigurable Computing <span>NUS</span></li>
+            <li>Operating Systems <span>NYCU</span></li>
+            <li>Computer Architecture <span>NYCU</span></li>
+            <li>Digital Signal Processing <span>NYCU</span></li>
+          </ul>
+          <div class="chips"><span>AMD Kria K26 · bare-metal A53</span><span>AXI DMA</span><span>ZCU111 RFSoC</span><span>Jetson Orin Nano</span><span>ESP32-S3</span><span>C / C++ / Python</span></div>
+          <span class="go">See projects →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="wrap section">
+      <div class="proj-top">
+        <h2 class="reveal">Projects</h2>
+        <div class="tabs reveal" role="tablist" aria-label="Project category">
+          <button role="tab" id="tab-ic" data-track="ic" aria-selected="true">Digital IC <span class="count"></span></button>
+          <button role="tab" id="tab-emb" data-track="emb" aria-selected="false">Embedded Systems <span class="count"></span></button>
+        </div>
+      </div>
+      <p class="track-note" id="track-note"></p>
+
+      <!-- LDPC on Kria : both -->
+      <article class="project reveal" data-tracks="ic emb">
+        <div class="project-head">
+          <div class="badges"><span class="b-ic">Digital IC</span><span class="b-emb">Embedded</span></div>
+          <p class="meta">NUS Hardware Acceleration and Reconfigurable Computing · Fall 2026 · with Xiong Binzhi</p>
+          <h3>LDPC Decoder Accelerator on AMD Kria K26</h3>
+          <div class="highlights">
+            <span><b>7.85×</b> faster than the Cortex-A53</span>
+            <span><b>214 ms</b> per 256×192 image</span>
+            <span><b>0 bit</b> mismatch vs. reference</span>
+            <span><b>2957 → 892</b> cycles per iteration</span>
+          </div>
+          <p>A Normalized Min-Sum decoder for a custom QC-LDPC(384,194) code, written in C++ with Vitis HLS and packaged as an
+            AXI-Stream IP. In the Vivado block design it sits behind AXI DMA; a bare-metal Cortex-A53 controller sets up the
+            transfers, starts the IP and times each image. Three hardware versions were measured on the board against a plain-C
+            A53 baseline, all decoding the same fixed noisy image and producing bit-identical output.</p>
+        </div>
+        <div class="project-body two">
+          <div>
+            <h4>Measured latency, one 256×192 image</h4>
+            <div class="bars" role="img" aria-label="Latency: A53 1680.8 ms, v1 1062.0 ms, v2 368.6 ms, v3 214.2 ms">
+              <div class="bar-row"><span class="lbl">Cortex-A53 · C</span><div class="track"><div class="bar cpu" data-w="1680.82"></div></div><span class="val">1680.8 ms</span></div>
+              <div class="bar-row"><span class="lbl">FPGA v1 · 100 MHz</span><div class="track"><div class="bar" data-w="1061.96"></div></div><span class="val">1062.0 ms <b>1.58×</b></span></div>
+              <div class="bar-row"><span class="lbl">FPGA v2 · 100 MHz</span><div class="track"><div class="bar" data-w="368.56"></div></div><span class="val">368.6 ms <b>4.56×</b></span></div>
+              <div class="bar-row"><span class="lbl">FPGA v3 · 125 MHz</span><div class="track"><div class="bar best" data-w="214.17"></div></div><span class="val">214.2 ms <b>7.85×</b></span></div>
+            </div>
+            <p class="fine">A53: median of 5 runs. FPGA: FPGA + DMA latency, mean of 5 runs after one warm-up
+              (includes ARM control and DMA, excludes JTAG). Same input for all platforms (Eb/N0 = 3 dB, 6,081 codewords).</p>
+          </div>
+          <div>
+            <h4>System</h4>
+            <svg viewBox="0 0 360 230" class="arch" role="img" aria-label="PC to PS DDR over JTAG; A53 controls AXI DMA; DMA streams LLRs into the PL decoder and decoded bits back">
+              <rect x="10" y="20" width="90" height="42" rx="6"/><text x="55" y="46">PC tools</text>
+              <rect x="135" y="20" width="90" height="42" rx="6"/><text x="180" y="46">PS DDR</text>
+              <rect x="260" y="20" width="90" height="42" rx="6"/><text x="305" y="40">Cortex-A53</text><text x="305" y="54" class="s">bare-metal</text>
+              <rect x="135" y="110" width="90" height="42" rx="6"/><text x="180" y="136">AXI DMA</text>
+              <rect x="110" y="178" width="140" height="44" rx="6" class="pl"/><text x="180" y="198">NMS decoder</text><text x="180" y="212" class="s">HLS IP in PL</text>
+              <path class="flow" d="M100 41 H135"/><text x="117" y="32" class="s">JTAG</text>
+              <path class="flow" d="M180 62 V110"/>
+              <path class="flow" d="M180 152 V178"/>
+              <path class="ctl" d="M305 62 V131 H225"/>
+            </svg>
+            <ul class="points">
+              <li><b>HLS:</b> v2 partitions memories by the QC structure and parallelizes check/variable updates; v3 adds parallelism and runs the PL at 125 MHz</li>
+              <li><b>Firmware:</b> standalone A53 controller with AXI DMA, hardware timer and a JTAG mailbox</li>
+              <li><b>Host:</b> Python/XSDB tools that program the board, upload LLRs and verify every output bit</li>
+            </ul>
+          </div>
+        </div>
+        <div class="links"><a href="https://github.com/jay97186/ceg5203-ldpc-decoder-acceleration" target="_blank" rel="noopener">Repository →</a></div>
+      </article>
+
+      <!-- RF photo link : both -->
+      <article class="project reveal" data-tracks="ic emb">
+        <div class="project-head">
+          <div class="badges"><span class="b-ic">Digital IC</span><span class="b-emb">Embedded</span></div>
+          <p class="meta">Extension of the LDPC project · AMD ZCU111 RFSoC · Kria K26</p>
+          <h3>LDPC-Coded Photo over a Real RF Channel</h3>
+          <div class="highlights">
+            <span><b>303</b> real channel bit errors corrected</span>
+            <span><b>15</b> decoder iterations to an exact image</span>
+            <span>FPGA output <b>bit-identical</b> to reference</span>
+          </div>
+          <p>A pixel-art photo is Huffman-compressed, LDPC-encoded and sent as a QPSK waveform from the ZCU111 DAC
+            through an SMA cable into its ADC. Lowering the DAC power produces real channel errors. The PC synchronizes and
+            demodulates the capture, and the LLRs are decoded by the HLS decoder on the Kria.
+            Drag the slider to watch the errors disappear iteration by iteration.</p>
+        </div>
+
+        <div class="flow" id="flow">
+          <div class="flow-lane tx-lane">Transmitter</div>
+          <div class="flow-grid" role="group" aria-label="Communication system block diagram">
+            <button class="blk tx" data-k="src" style="grid-area:a"><span class="dot pc"></span>Source<small>30×30 image</small></button>
+            <button class="blk tx" data-k="senc" style="grid-area:b"><span class="dot pc"></span>Source encoder<small>Huffman + CRC</small></button>
+            <button class="blk tx" data-k="cenc" style="grid-area:c"><span class="dot pc"></span>Channel encoder<small>LDPC (384,194)</small></button>
+            <button class="blk tx" data-k="mod" style="grid-area:d"><span class="dot rf"></span>Modulator · DAC<small>QPSK, 407 MHz</small></button>
+            <button class="blk ch" data-k="ch" style="grid-area:e"><span class="dot rf"></span>Channel<small>SMA cable<br>real noise</small></button>
+            <button class="blk rx first" data-k="dem" style="grid-area:f"><span class="dot rf"></span>ADC · Demodulator<small>sync → LLR</small></button>
+            <button class="blk rx key" data-k="cdec" style="grid-area:g"><span class="dot fpga"></span>Channel decoder<small id="cdec-sub">LDPC NMS on FPGA</small></button>
+            <button class="blk rx" data-k="sdec" style="grid-area:h"><span class="dot pc"></span>Source decoder<small>Huffman + CRC check</small></button>
+            <button class="blk rx" data-k="sink" style="grid-area:i"><span class="dot pc"></span>Sink<small>recovered image</small></button>
+          </div>
+          <div class="flow-lane rx-lane">Receiver</div>
+          <div class="flow-detail" aria-live="polite">
+            <span class="where" id="flow-where"></span>
+            <span><b id="flow-title"></b> <span id="flow-desc"></span></span>
+          </div>
+          <div class="flow-legend"><span><i class="dot pc"></i>PC</span><span><i class="dot rf"></i>ZCU111 RFSoC</span><span><i class="dot fpga"></i>Kria K26 FPGA</span></div>
+          <details class="hw" id="hw">
+            <summary>Hardware setup <span>— the real channel on the board</span></summary>
+            <div class="hw-grid">
+              <figure class="hw-main">
+                <div class="hw-photo">
+                  <img src="assets/img/zcu111_xm500.jpg" alt="ZCU111 with the XM500 balun card; one SMA cable from DAC229_T1_CH3 to ADC224_T0_CH0" loading="lazy">
+                  <span class="pin" style="left:42.5%; top:20.9%"><i></i><b>ADC in</b></span>
+                  <span class="pin" style="left:41.5%; top:85.5%"><i></i><b>DAC out</b></span>
+                </div>
+                <figcaption>AMD ZCU111 with the XM500 balun card. One SMA cable loops the DAC output (DAC229_T1_CH3) back to the ADC
+                  input (J4, ADC224_T0_CH0) — this cable is the channel in the diagram above.</figcaption>
+              </figure>
+              <div class="hw-shots">
+                <figure>
+                  <button class="zoom" type="button" data-full="assets/img/dac_tx_spectrum.png" aria-label="Enlarge DAC spectrum">
+                    <img src="assets/img/dac_tx_spectrum.png" alt="RF Data Converter Evaluation UI, DAC Tile 1 DAC 3 spectrum of the QPSK photo waveform at PEP −5.2 dBFS" loading="lazy">
+                  </button>
+                  <figcaption><b>Transmit.</b> DAC Tile 1 – DAC 3 playing <code>photo30q_all_qpsk</code> (25,440 samples, 6.5 GS/s)
+                    at PEP −5.2 dBFS: QPSK main lobe around 407 MHz, nulls every 407 MHz from the rectangular pulses.</figcaption>
+                </figure>
+                <figure>
+                  <button class="zoom" type="button" data-full="assets/img/adc_rx_spectrum.png" aria-label="Enlarge ADC spectrum">
+                    <img src="assets/img/adc_rx_spectrum.png" alt="RF Data Converter Evaluation UI, ADC Tile 0 ADC 01 received spectrum, 16384 samples" loading="lazy">
+                  </button>
+                  <figcaption><b>Receive.</b> ADC Tile 0 – ADC 01, 16,384 samples at 4.096 GS/s: the signal at ±407 MHz sits only a few dB
+                    above the noise floor — that is where the bit errors come from. The 0 Hz spike is the ADC DC offset.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div class="project-body demo">
+          <div class="cases" role="radiogroup" aria-label="Choose a real capture">
+            <span class="cases-label">Real capture</span>
+            <button type="button" role="radio" data-case="ok" aria-checked="true"><span class="mark ok">✓</span>DAC −5.2 dBFS · decodes</button>
+            <button type="button" role="radio" data-case="fail" aria-checked="false"><span class="mark no">✗</span>DAC −6 dBFS · too noisy</button>
+          </div>
+          <figure class="demo-images">
+            <div><img src="assets/iter/tx.png" alt="Transmitted 30 by 30 image" class="px"><figcaption>Transmitted</figcaption></div>
+            <div><img id="iter-img" src="assets/iter/it00.png" alt="Decoded image at the selected iteration" class="px"><figcaption id="iter-cap">Received, no decoding</figcaption></div>
+          </figure>
+          <div class="demo-panel">
+            <div class="readout">
+              <div><span class="k">Iteration</span><span class="v" id="iter-n">0</span></div>
+              <div><span class="k">Bit errors</span><span class="v" id="iter-bits">303</span></div>
+              <div><span class="k">Image</span><span class="v" id="iter-crc">CRC fail</span></div>
+            </div>
+            <div class="slider-row">
+              <button id="iter-play" class="btn small" type="button">▶ Play</button>
+              <input id="iter-slider" type="range" min="0" max="20" value="0" aria-label="Decoder iteration">
+            </div>
+            <svg id="iter-chart" viewBox="0 0 400 150" class="chart" role="img" aria-label="Remaining bit errors versus iteration"></svg>
+            <p class="fine" id="demo-note">Real capture: QPSK 30×30, DAC −5.2 dBFS, 303 of 3,072 coded bits wrong at the receiver.
+              Frames shown are from the PC reference NMS decoder; on the board, the Kria v3 output was bit-identical
+              at iteration limits 0, 15 and 20, with CRC passing from iteration 15.</p>
+          </div>
+        </div>
+        <div class="links"><a href="https://github.com/jay97186/ceg5203-ldpc-decoder-acceleration/tree/main/zcu111_photo_link" target="_blank" rel="noopener">Repository →</a></div>
+      </article>
+
+      <!-- CMOS : IC -->
+      <article class="project compact reveal" data-tracks="ic">
+        <div class="badges"><span class="b-ic">Digital IC</span></div>
+        <p class="meta">NUS VLSI Digital Circuit Design · Fall 2026 · Cadence Virtuoso, gpdk045</p>
+        <h3>CMOS Logic Gate Delay Simulation</h3>
+        <p>Transistor-level inverter, NAND and NOR gates with device sizing, a four-stage logic path and its testbench in
+          Cadence Virtuoso; TT transient simulations in ADE and baseline propagation-delay measurement with ViVA.</p>
+      </article>
+
+      <!-- VLC : embedded -->
+      <article class="project reveal" data-tracks="emb">
+        <div class="project-head">
+          <div class="badges"><span class="b-emb">Embedded</span></div>
+          <p class="meta">NYCU × ITRI · Jan – Jul 2026 · NVIDIA Jetson Orin Nano · ESP32-S3</p>
+          <h3>AI-Based Light Tracking for Visible Light Communication</h3>
+          <p>A visible light communication link with PN-code synchronization, error-correction coding and
+            interleaving, transmitting and decoding 100-character English messages under partial blockage —
+            together with a YOLOv8 + PID pan-tilt system that keeps the receiver aligned with the light source.</p>
+        </div>
+        <div class="project-body two">
+          <div class="mini">
+            <h4>Optical link with BLE acknowledgement</h4>
+            <p>An ESP32-S3 sends packets by switching a NeoPixel LED; the Jetson receives them through a CSI camera,
+              decodes Hamming(7,4), checks CRC-8 and returns per-packet ACKs over BLE so failed packets are retransmitted.</p>
+            <a href="https://github.com/jay97186/esp32-jetson-ble" target="_blank" rel="noopener">esp32-jetson-ble →</a>
+          </div>
+          <div class="mini">
+            <h4>YOLO + PID tracker</h4>
+            <p>YOLO locates the target in 1280×720 frames; a PID controller with dead zone, integral clamping and an EMA
+              position filter drives a servo through a PCA9685 over I²C.</p>
+            <a href="https://github.com/jay97186/jetson-yolo-pid-tracker" target="_blank" rel="noopener">jetson-yolo-pid-tracker →</a>
+          </div>
+          <figure class="wide">
+            <img src="assets/img/pid_filtered.png" alt="Control loop: YOLOv8 detection, EMA filter, error, dead zone, PID, servo" loading="lazy">
+            <figcaption>Tracking control loop with EMA position filter and dead zone.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- RFSoC research : embedded -->
+      <article class="project compact reveal" data-tracks="emb">
+        <div class="badges"><span class="b-emb">Embedded</span><span class="b-now">Ongoing research</span></div>
+        <p class="meta">NUS research project · Aug 2026 – present · AMD ZCU111 RFSoC</p>
+        <h3>RFSoC Clock Synchronization and Frequency Compensation</h3>
+        <ul class="points">
+          <li>Measuring relative clock drift and communication latency between a ZCU111 and a PC over Ethernet.</li>
+          <li>Comparing board-side and PC-side timestamps over 2–90 s to estimate the relative clock rate in ppm, and testing
+            whether a fixed transmission-delay compensation holds across measurement durations.</li>
+          <li>Working toward a PC-as-master architecture that estimates and separately compensates the frequency offsets of two
+            Ethernet-connected RFSoC boards.</li>
+        </ul>
+      </article>
+
+      <!-- PID levitation : embedded -->
+      <article class="project compact reveal" data-tracks="emb">
+        <div class="badges"><span class="b-emb">Embedded</span></div>
+        <p class="meta">Control systems lab · Fall 2024</p>
+        <h3>Airflow Levitation with PID Control</h3>
+        <p>Designed and tuned a PID controller that regulates the height of a levitating ping-pong ball through fan speed.</p>
+      </article>
+    </section>
+
+    <!-- ============ PUBLICATION ============ -->
+    <section id="publication" class="wrap section">
+      <h2 class="reveal">Publication</h2>
+      <article class="card pub reveal">
+        <p class="venue">IEEE APWCS 2025 · Co-author</p>
+        <h3>Enhanced Bit-Flipping Decoding Using Refined Checksum Weights and Flip Metrics for LDPC Codes</h3>
+      </article>
+    </section>
+
+    <!-- ============ OTHER ============ -->
+    <section class="wrap section">
+      <h2 class="reveal">Other</h2>
+      <article class="card reveal">
+        <p class="meta">NTUT undergraduate research · 2023 – 2024</p>
+        <h3>Wildlife Image Recognition</h3>
+        <p>Developed and refined image recognition algorithms, improving mAP in low-light conditions.
+          <b>Excellence award</b> at the project exhibition.</p>
+      </article>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="wrap section">
+      <h2 class="reveal">Education</h2>
+      <ol class="timeline">
+        <li class="reveal">
+          <span class="when">Aug 2026 – present</span>
+          <h3>National University of Singapore</h3>
+          <p>M.Sc. in Electrical Engineering</p>
+          <p class="fine">VLSI Digital Circuit Design · Hardware Acceleration and Reconfigurable Computing · Information Theory · Pattern Recognition</p>
+        </li>
+        <li class="reveal">
+          <span class="when">Sep 2025 – Jul 2026</span>
+          <h3>National Yang Ming Chiao Tung University</h3>
+          <p>Graduate coursework and research</p>
+          <p class="fine">Digital Integrated Circuit · DSP-VLSI · Coding Theory · DSP · Computer Architecture · Operating Systems</p>
+        </li>
+        <li class="reveal">
+          <span class="when">Sep 2021 – Jun 2025</span>
+          <h3>National Taipei University of Technology</h3>
+          <p>B.S. in Electrical Engineering · GPA 3.88 / 4.00 (last 60 credits 4.00)</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="wrap section">
+      <h2 class="reveal">Skills</h2>
+      <div class="skills reveal">
+        <div><h4>Digital design</h4><p>Verilog · Vitis HLS · Vivado block design and IP integration · AXI-Stream · Cadence Virtuoso, ADE, ViVA (gpdk045)</p></div>
+        <div><h4>Embedded &amp; SoC</h4><p>Bare-metal Cortex-A53 · AXI DMA · XSDB/JTAG · Jetson (GStreamer, I²C) · ESP32 (Arduino, BLE)</p></div>
+        <div><h4>Communication &amp; coding</h4><p>LDPC (Normalized Min-Sum, bit-flipping) · error-correction coding and interleaving · PN-code synchronization · clock drift / ppm analysis · BPSK/QPSK</p></div>
+        <div><h4>Platforms</h4><p>AMD Kria KV260 · AMD ZCU111 RFSoC · NVIDIA Jetson Orin Nano · ESP32-S3</p></div>
+        <div><h4>Programming</h4><p>C · C++ · Python · MATLAB · Processing</p></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="wrap section contact reveal">
+      <h2>Contact</h2>
+      <p>I am looking for digital IC design roles. Feel free to reach out.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:jay97186@gmail.com">jay97186@gmail.com</a>
+        <a class="btn" href="https://github.com/jay97186" target="_blank" rel="noopener">github.com/jay97186</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">© 2026 Kai-Chieh Lin</footer>
+  <dialog class="lightbox" id="lightbox" aria-label="Enlarged image"><img alt=""><p>Click anywhere to close</p></dialog>
+  <script src="main.js"></script>
+</body>
+</html>
