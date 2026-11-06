@@ -258,15 +258,16 @@
           <div class="badges"><span class="b-emb">Embedded</span></div>
           <p class="meta">NYCU × ITRI · Jan – Jul 2026 · NVIDIA Jetson Orin Nano · ESP32-S3</p>
           <h3>AI-Based Light Tracking for Visible Light Communication</h3>
-          <p>A visible light communication link with PN-code synchronization, error-correction coding and
-            interleaving, transmitting and decoding 100-character English messages under partial blockage —
-            together with a YOLOv8 + PID pan-tilt system that keeps the receiver aligned with the light source.</p>
+          <p>Implemented Barker-13-based synchronization, error-correction coding, and interleaving to reliably decode
+            100-character English messages under partial blockage — together with a YOLOv8 + PID pan-tilt system that
+            keeps the receiver aligned with the light source.</p>
         </div>
         <div class="project-body two">
           <div class="mini">
             <h4>Optical link with BLE acknowledgement</h4>
             <p>An ESP32-S3 sends packets by switching a NeoPixel LED; the Jetson receives them through a CSI camera,
-              decodes Hamming(7,4), checks CRC-8 and returns per-packet ACKs over BLE so failed packets are retransmitted.</p>
+              locks onto each packet with the Barker-13 preamble, de-interleaves and decodes Hamming(7,4), checks CRC-8
+              and returns per-packet ACKs over BLE so failed packets are retransmitted.</p>
             <a href="https://github.com/jay97186/esp32-jetson-ble" target="_blank" rel="noopener">esp32-jetson-ble →</a>
           </div>
           <div class="mini">
@@ -355,7 +356,7 @@
       <div class="skills reveal">
         <div><h4>Digital design</h4><p>Verilog · Vitis HLS · Vivado block design and IP integration · AXI-Stream · Cadence Virtuoso, ADE, ViVA (gpdk045)</p></div>
         <div><h4>Embedded &amp; SoC</h4><p>Bare-metal Cortex-A53 · AXI DMA · XSDB/JTAG · Jetson (GStreamer, I²C) · ESP32 (Arduino, BLE)</p></div>
-        <div><h4>Communication &amp; coding</h4><p>LDPC (Normalized Min-Sum, bit-flipping) · error-correction coding and interleaving · PN-code synchronization · clock drift / ppm analysis · BPSK/QPSK</p></div>
+        <div><h4>Communication &amp; coding</h4><p>LDPC (Normalized Min-Sum, bit-flipping) · error-correction coding and interleaving · Barker-13 frame synchronization · clock drift / ppm analysis · BPSK/QPSK</p></div>
         <div><h4>Platforms</h4><p>AMD Kria KV260 · AMD ZCU111 RFSoC · NVIDIA Jetson Orin Nano · ESP32-S3</p></div>
         <div><h4>Programming</h4><p>C · C++ · Python · MATLAB · Processing</p></div>
       </div>
